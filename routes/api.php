@@ -26,6 +26,8 @@ Route::get('subject', [SubjectController::class, 'allSubject']);
 
 Route::get('subject/{id}', [SubjectController::class, 'findSubjectId']);
 
+Route::get('subject/{semester_id}/semester', [SubjectController::class, 'findSubjectSemesterId']);
+
 Route::post('subject/store', [SubjectController::class, 'store']);
 
 Route::post('subject/{id}/update', [SubjectController::class, 'update']);
@@ -43,6 +45,8 @@ Route::post('semester/{id}/update', [SemesterController::class, 'update']);
 Route::delete('semester/{id}/destroy', [SemesterController::class, 'destroy']);
 
 Route::get('user', [UserController::class, 'allUser']);
+
+Route::get('user/rol', [UserController::class, 'findUserRolId']);
 
 Route::post('user/store', [UserController::class, 'store']);
 

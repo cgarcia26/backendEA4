@@ -92,6 +92,40 @@ class UserController extends Controller
         }
     }
     
+    public function findUserRolId(Request $request)
+    { 
+        
+        $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+
+        try {
+            
+            JWT::decode($jwt, new Key(env('JWT_SECRET'), 'HS256'));
+
+            $user = User::where('rol_id', 2)->get();
+        
+                return response()->json(
+                    [
+                    'code' => 200,
+                    'status' => 'ok',
+                    'data' =>$user
+                    ]
+                    );
+
+        } catch (\Exception $th) {
+
+            $error = $th->getMessage();
+
+            return response()->json(
+                [
+                'code' => 500,
+                'status' => 'error',
+                'data' => $error
+                ]
+                );
+        }
+    }
+
+
     public function store(Request $request )
     {
         try {
