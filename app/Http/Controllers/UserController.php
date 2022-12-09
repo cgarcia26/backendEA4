@@ -23,6 +23,8 @@ class UserController extends Controller
 
             $passBD = $user->password;
 
+            $rol = $user->rol_id;
+
             if(Hash::check($pass, $passBD)){
 
                 $jwt = JWT::encode([$user], env('JWT_SECRET'), 'HS256');
@@ -32,6 +34,7 @@ class UserController extends Controller
                     'code'=> 200,
                     'status'=> 'Ok',
                     'data'=> $user,
+                    'rol'=> $rol,
                     'token'=> $jwt
                     ]
                 );
@@ -62,7 +65,7 @@ class UserController extends Controller
     public function allUser(Request $request)
     { 
         
-        $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+        $jwt = substr($request->header('Authorization', 'token <token>'), 6);
 
         try {
             
@@ -95,7 +98,7 @@ class UserController extends Controller
     public function findUserRolId(Request $request)
     { 
         
-        $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+        $jwt = substr($request->header('Authorization', 'token <token>'), 6);
 
         try {
             

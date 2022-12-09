@@ -13,7 +13,7 @@ class SemesterController extends Controller
     public function allSemester(Request $request)
     {      
       
-        $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+        $jwt = substr($request->header('Authorization', 'token <token>'), 6);
         
         try {
             
@@ -46,7 +46,7 @@ class SemesterController extends Controller
     public function findSemesterId(Request $request, $id)
     { 
 
-        $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+        $jwt = substr($request->header('Authorization', 'token <token>'), 6);
 
         try {
 
@@ -79,7 +79,7 @@ class SemesterController extends Controller
     public function store(Request $request )
     {
 
-       $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+       $jwt = substr($request->header('Authorization', 'token <token>'), 6);
 
         try {
             
@@ -112,7 +112,7 @@ class SemesterController extends Controller
     public function update(Request $request, $id)
     {
 
-       $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+       $jwt = substr($request->header('Authorization', 'token <token>'), 6);
 
         try {
 
@@ -147,7 +147,7 @@ class SemesterController extends Controller
     public function destroy(Request $request, $id)
     {
 
-        $jwt = substr($request->header('Authorization', 'token <token>'), 7);
+        $jwt = substr($request->header('Authorization', 'token <token>'), 6);
 
         try {
 

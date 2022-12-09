@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->tinyInteger('credits');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('subject_prerequisite', 255);
+            $table->string('subject_prerequisite', 255)->nullable();
             $table->tinyInteger('autonomous_hours');
             $table->tinyInteger('directed_hours');
             $table->foreignId('semester_id')->constrained('semesters')->cascadeOnDelete()->cascadeOnUpdate();

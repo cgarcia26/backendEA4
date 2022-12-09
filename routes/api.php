@@ -26,7 +26,7 @@ Route::get('subject', [SubjectController::class, 'allSubject']);
 
 Route::get('subject/{id}', [SubjectController::class, 'findSubjectId']);
 
-Route::get('subject/{semester_id}/semester', [SubjectController::class, 'findSubjectSemesterId']);
+Route::get('subject/{id}/semester', [SubjectController::class, 'findSubjectSemesterId']);
 
 Route::post('subject/store', [SubjectController::class, 'store']);
 
@@ -53,3 +53,5 @@ Route::post('user/store', [UserController::class, 'store']);
 Route::post('user/login', [UserController::class, 'login']);
 
 Route::get('rol', [RolController::class, 'allRol']);
+
+Route::get('rol/{id}', [RolController::class, 'findRolId']);
